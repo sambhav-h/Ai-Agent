@@ -3,7 +3,7 @@ import { useTRPC } from "@/trpc/client"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useForm } from "react-hook-form"
 import {z} from "zod"
-import { agentsInsertSchema } from "@/modules/schemas"
+import { agentsInsertSchema } from "@/modules/agents/schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 import {
@@ -39,7 +39,7 @@ export const AgentForm = ({
         trpc.agents.create.mutationOptions({
             onSuccess: async () => {
                 await queryClient.invalidateQueries(
-                    trpc.agents.getMany.queryOptions()
+                    trpc.agents.getMany.queryOptions({})
                 )
 
                 if(initialValues?.id){
