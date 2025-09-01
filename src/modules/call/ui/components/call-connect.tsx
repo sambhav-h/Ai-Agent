@@ -38,7 +38,7 @@ export const CallConnect = ({
   );
 
   const [client, setClient] = useState<StreamVideoClient>();
-  
+
   useEffect(() => {
     const _client = new StreamVideoClient({
       apiKey: process.env.NEXT_PUBLIC_STREAM_VIDEO_API_KEY!,
@@ -84,7 +84,7 @@ export const CallConnect = ({
   return (
   <StreamVideo client={client}>
     <StreamCall call={call}>
-        <CallUI meetingId={meetingId} meetingName={meetingName}/>
+        <CallUI meetingName={meetingName}/>
     </StreamCall>
   </StreamVideo>
   )
