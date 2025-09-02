@@ -61,7 +61,7 @@ export const columns: ColumnDef<MeetingGetMany[number]>[] = [
            seed = {row.original.agent.name}
            className="size-4"/>
 
-           <span className="text-sm text-muted-foreground">{row.original.startedAt? format (row.original.startedAt, "MMM D") : ""}</span>
+           <span className="text-sm text-muted-foreground">{row.original.startedAt? format (row.original.startedAt, "MMM d") : ""}</span>
         </div>
       </div>
     ),
